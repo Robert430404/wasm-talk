@@ -30,7 +30,7 @@ document.addEventListener(eventName, () => {
 const go = new Go();
 
 WebAssembly.instantiateStreaming(
-  fetch('./build/print.wasm'),
+  fetch('./build/generate.wasm'),
   go.importObject,
 ).then((result) => {
   go.run(result.instance);
