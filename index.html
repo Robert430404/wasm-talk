@@ -1,0 +1,117 @@
+<html>
+  <head>
+    <title>Web Assembly Example</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #2b2b2b;
+        color: #ff71ee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .Demo {
+        width: 100%;
+        max-width: 90%;
+        padding: 50px;
+        display: grid;
+        gap: 22px;
+      }
+
+      .Demo__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 22px;
+      }
+
+      .Demo__javascript,
+      .Demo__webassembly {
+        background: rgba(00, 00, 00, 0.05);
+        border-radius: 4px;
+        padding: 20px;
+        text-align: center;
+        display: flex;
+        gap: 22px;
+        flex-direction: column;
+      }
+
+      .Demo__javascript {
+        grid-column: 1;
+      }
+
+      .Demo__webassembly {
+        grid-column: 2;
+      }
+
+      .Demo__javascriptOutput,
+      .Demo__webassemblyOutput {
+        padding: 15px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .Demo__javascriptButton,
+      .Demo__webassemblyButton {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        cursor: pointer;
+        background: #ff71ee;
+        box-shadow: 5px 5px 0px rgba(00, 00, 00, 0.35);
+        border: 0;
+        transition: all 0.1s;
+      }
+
+      .Demo__javascriptButton:hover,
+      .Demo__webassemblyButton:hover {
+        opacity: 0.7;
+      }
+
+      .Demo__javascriptButton:focus,
+      .Demo__webassemblyButton:focus {
+        top: 5px;
+        left: 5px;
+        box-shadow: 0px 0px 0px rgba(00, 00, 00, 0.35);
+      }
+
+      .Demo__javascriptOutput,
+      .Demo__webassemblyOutput {
+        border: 5px solid #ff71ee;
+        box-shadow: 5px 5px 0px rgba(00, 00, 00, 0.35);
+        background: transparent;
+        color: #ff71ee;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Demo">
+      <div class="Demo__javascript">
+        <h3 class="Demo__title">Native JavaScript Execution</h3>
+        <textarea class="Demo__javascriptOutput">
+Click the button to run.
+        </textarea>
+        <button class="Demo__javascriptButton">Start Me Up!</button>
+      </div>
+      <div class="Demo__webassembly">
+        <h3 class="Demo__title">Web Assembly Execution</h3>
+        <textarea class="Demo__webassemblyOutput">
+Click the button to fly!
+        </textarea>
+        <button class="Demo__webassemblyButton">
+          Lets Kick It Into Overdrive!
+        </button>
+      </div>
+    </div>
+
+    <!-- Load in our scripts-->
+    <script src="./wasm/wasm_exec.js"></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
